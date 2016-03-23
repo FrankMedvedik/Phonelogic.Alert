@@ -1,0 +1,43 @@
+﻿<UserControl xmlns:controls="clr-namespace:Microsoft.Lync.Controls;assembly=Microsoft.Lync.Controls" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:converters="clr-namespace:Phonelogic.Alert.Converters"
+    x:Class="Phonelogic.Alert.MyCallsInQueueView"
+    mc:Ignorable="d"  Height="300" Width="300">
+    <Control.Resources>
+        <DataTemplate x:Key="TakeCallTemplate" >
+            <Grid >
+                <Button Name="btnTakeCall" Margin="6" Click="btnTakeCall_Click" Width="90" IsEnabled="True">Accept</Button>
+            </Grid>
+        </DataTemplate>
+        <converters:BooleanToVisibility x:Key="BoolToVisConverter" />
+        <converters:NotBooleanToVisibility x:Key="NotBoolToVisConverter" />
+    </Control.Resources>
+    <Grid Margin="6" HorizontalAlignment="Center" VerticalAlignment="Top" Background="{Binding TheBackground}">
+        <StackPanel Orientation="Vertical">
+        <TextBlock Text="Call Alert" FontWeight="Bold" HorizontalAlignment="Center" Foreground="{Binding TheForeground}" Margin="6" />
+            <controls:MyStatusArea PhotoDisplayMode="Hidden" Margin="6" ForceCursor="True" />
+        <StackPanel Visibility="Visible"  Background="{Binding TheBackground}"  Orientation="Vertical" HorizontalAlignment="Left" Margin="0,0,-62,0">
+            <DataGrid x:Name="callbackGrid" AutoGenerateColumns="False" FontWeight="Bold" Foreground="{Binding TheForeground}" SelectedItem="{Binding SelectedCallInQueue, Mode=TwoWay}"    
+                ItemsSource="{Binding CallsInQueue}"  VerticalAlignment="Top"  IsReadOnly="True" ToolTipService.ToolTip="incoming phone calls" SelectionMode="Single"
+                HorizontalAlignment="Left" Margin="6" MinHeight="40">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding JobFormatted}" />
+                    <DataGridTextColumn Binding="{Binding CallerIdFormatted}"  />
+                    <DataGridTemplateColumn CellTemplate="{StaticResource TakeCallTemplate}" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+        <StackPanel Visibility="{Binding ShowGridData, Converter={StaticResource NotBoolToVisConverter}}" Margin="6">
+            <TextBlock Text="No Incoming Calls" />
+            <StackPanel Orientation="Vertical" Visibility="{Binding LoadedOk, Converter={StaticResource NotBoolToVisConverter}}">
+                <TextBlock Text="Error during load" />
+                <TextBlock Text="{Binding LoadMethod}" />
+                <TextBlock Text="{Binding LoadError}" TextWrapping="Wrap" />
+            </StackPanel>
+        </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

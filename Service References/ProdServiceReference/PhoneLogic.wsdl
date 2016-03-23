@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://reckner.phonelogic.windowsservice" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://reckner.phonelogic.windowsservice" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://reckner.phonelogic.windowsservice/Imports">
+      <xsd:import schemaLocation="http://cc-prod.reckner.com:1255/PhoneLogic?xsd=xsd0" namespace="http://reckner.phonelogic.windowsservice" />
+      <xsd:import schemaLocation="http://cc-prod.reckner.com:1255/PhoneLogic?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://cc-prod.reckner.com:1255/PhoneLogic?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PhoneLogic.DataContracts" />
+      <xsd:import schemaLocation="http://cc-prod.reckner.com:1255/PhoneLogic?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPhoneLogicService_GetJobSummary_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetJobSummary" />
+  </wsdl:message>
+  <wsdl:message name="IPhoneLogicService_GetJobSummary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetJobSummaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPhoneLogicService_GetQueueDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQueueDetail" />
+  </wsdl:message>
+  <wsdl:message name="IPhoneLogicService_GetQueueDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQueueDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPhoneLogicService_GetAllCallsInQueue_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCallsInQueue" />
+  </wsdl:message>
+  <wsdl:message name="IPhoneLogicService_GetAllCallsInQueue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCallsInQueueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPhoneLogicService_GetMyQueuedCalls_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMyQueuedCalls" />
+  </wsdl:message>
+  <wsdl:message name="IPhoneLogicService_GetMyQueuedCalls_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMyQueuedCallsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPhoneLogicService_GetMyQueueSummary_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMyQueueSummary" />
+  </wsdl:message>
+  <wsdl:message name="IPhoneLogicService_GetMyQueueSummary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMyQueueSummaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPhoneLogicService_GetMyQueueDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMyQueueDetail" />
+  </wsdl:message>
+  <wsdl:message name="IPhoneLogicService_GetMyQueueDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMyQueueDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPhoneLogicService_GetRecruitersOnline_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecruitersOnline" />
+  </wsdl:message>
+  <wsdl:message name="IPhoneLogicService_GetRecruitersOnline_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecruitersOnlineResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPhoneLogicService_GetRecruitersAvailable_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecruitersAvailable" />
+  </wsdl:message>
+  <wsdl:message name="IPhoneLogicService_GetRecruitersAvailable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecruitersAvailableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPhoneLogicService_GetActiveCalls_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetActiveCalls" />
+  </wsdl:message>
+  <wsdl:message name="IPhoneLogicService_GetActiveCalls_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetActiveCallsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPhoneLogicService_ForceReady_InputMessage">
+    <wsdl:part name="parameters" element="tns:ForceReady" />
+  </wsdl:message>
+  <wsdl:message name="IPhoneLogicService_ForceReady_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ForceReadyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPhoneLogicService_PullFromQueue_InputMessage">
+    <wsdl:part name="parameters" element="tns:PullFromQueue" />
+  </wsdl:message>
+  <wsdl:message name="IPhoneLogicService_PullFromQueue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PullFromQueueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPhoneLogicService_RecruiterDialOut_InputMessage">
+    <wsdl:part name="parameters" element="tns:RecruiterDialOut" />
+  </wsdl:message>
+  <wsdl:message name="IPhoneLogicService_RecruiterDialOut_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RecruiterDialOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPhoneLogicService_TransferCall_InputMessage">
+    <wsdl:part name="parameters" element="tns:TransferCall" />
+  </wsdl:message>
+  <wsdl:message name="IPhoneLogicService_TransferCall_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TransferCallResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPhoneLogicService_SilentMonitorCall_InputMessage">
+    <wsdl:part name="parameters" element="tns:SilentMonitorCall" />
+  </wsdl:message>
+  <wsdl:message name="IPhoneLogicService_SilentMonitorCall_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SilentMonitorCallResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPhoneLogicService_BargeIntoCall_InputMessage">
+    <wsdl:part name="parameters" element="tns:BargeIntoCall" />
+  </wsdl:message>
+  <wsdl:message name="IPhoneLogicService_BargeIntoCall_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BargeIntoCallResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPhoneLogicService_DispatchCallInQueue_InputMessage">
+    <wsdl:part name="parameters" element="tns:DispatchCallInQueue" />
+  </wsdl:message>
+  <wsdl:message name="IPhoneLogicService_DispatchCallInQueue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DispatchCallInQueueResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IPhoneLogicService">
+    <wsdl:operation name="GetJobSummary">
+      <wsdl:input wsaw:Action="http://reckner.phonelogic.windowsservice/IPhoneLogicService/GetJobSummary" message="tns:IPhoneLogicService_GetJobSummary_InputMessage" />
+      <wsdl:output wsaw:Action="http://reckner.phonelogic.windowsservice/IPhoneLogicService/GetJobSummaryResponse" message="tns:IPhoneLogicService_GetJobSummary_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQueueDetail">
+      <wsdl:input wsaw:Action="http://reckner.phonelogic.windowsservice/IPhoneLogicService/GetQueueDetail" message="tns:IPhoneLogicService_GetQueueDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://reckner.phonelogic.windowsservice/IPhoneLogicService/GetQueueDetailResponse" message="tns:IPhoneLogicService_GetQueueDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCallsInQueue">
+      <wsdl:input wsaw:Action="http://reckner.phonelogic.windowsservice/IPhoneLogicService/GetAllCallsInQueue" message="tns:IPhoneLogicService_GetAllCallsInQueue_InputMessage" />
+      <wsdl:output wsaw:Action="http://reckner.phonelogic.windowsservice/IPhoneLogicService/GetAllCallsInQueueResponse" message="tns:IPhoneLogicService_GetAllCallsInQueue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMyQueuedCalls">
+      <wsdl:input wsaw:Action="http://reckner.phonelogic.windowsservice/IPhoneLogicService/GetMyQueuedCalls" message="tns:IPhoneLogicService_GetMyQueuedCalls_InputMessage" />
+      <wsdl:output wsaw:Action="http://reckner.phonelogic.windowsservice/IPhoneLogicService/GetMyQueuedCallsResponse" message="tns:IPhoneLogicService_GetMyQueuedCalls_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMyQueueSummary">
+      <wsdl:input wsaw:Action="http://reckner.phonelogic.windowsservice/IPhoneLogicService/GetMyQueueSummary" message="tns:IPhoneLogicService_GetMyQueueSummary_InputMessage" />
+      <wsdl:output wsaw:Action="http://reckner.phonelogic.windowsservice/IPhoneLogicService/GetMyQueueSummaryResponse" message="tns:IPhoneLogicService_GetMyQueueSummary_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMyQueueDetail">
+      <wsdl:input wsaw:Action="http://reckner.phonelogic.windowsservice/IPhoneLogicService/GetMyQueueDetail" message="tns:IPhoneLogicService_GetMyQueueDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://reckner.phonelogic.windowsservice/IPhoneLogicService/GetMyQueueDetailResponse" message="tns:IPhoneLogicService_GetMyQueueDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecruitersOnline">
+      <wsdl:input wsaw:Action="http://reckner.phonelogic.windowsservice/IPhoneLogicService/GetRecruitersOnline" message="tns:IPhoneLogicService_GetRecruitersOnline_InputMessage" />
+      <wsdl:output wsaw:Action="http://reckner.phonelogic.windowsservice/IPhoneLogicService/GetRecruitersOnlineResponse" message="tns:IPhoneLogicService_GetRecruitersOnline_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecruitersAvailable">
+      <wsdl:input wsaw:Action="http://reckner.phonelogic.windowsservice/IPhoneLogicService/GetRecruitersAvailable" message="tns:IPhoneLogicService_GetRecruitersAvailable_InputMessage" />
+      <wsdl:output wsaw:Action="http://reckner.phonelogic.windowsservice/IPhoneLogicService/GetRecruitersAvailableResponse" message="tns:IPhoneLogicService_GetRecruitersAvailable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveCalls">
+      <wsdl:input wsaw:Action="http://reckner.phonelogic.windowsservice/IPhoneLogicService/GetActiveCalls" message="tns:IPhoneLogicService_GetActiveCalls_InputMessage" />
+      <wsdl:output wsaw:Action="http://reckner.phonelogic.windowsservice/IPhoneLogicService/GetActiveCallsResponse" message="tns:IPhoneLogicService_GetActiveCalls_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ForceReady">
+      <wsdl:input wsaw:Action="http://reckner.phonelogic.windowsservice/IPhoneLogicService/ForceReady" message="tns:IPhoneLogicService_ForceReady_InputMessage" />
+      <wsdl:output wsaw:Action="http://reckner.phonelogic.windowsservice/IPhoneLogicService/ForceReadyResponse" message="tns:IPhoneLogicService_ForceReady_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PullFromQueue">
+      <wsdl:input wsaw:Action="http://reckner.phonelogic.windowsservice/IPhoneLogicService/PullFromQueue" message="tns:IPhoneLogicService_PullFromQueue_InputMessage" />
+      <wsdl:output wsaw:Action="http://reckner.phonelogic.windowsservice/IPhoneLogicService/PullFromQueueResponse" message="tns:IPhoneLogicService_PullFromQueue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RecruiterDialOut">
+      <wsdl:input wsaw:Action="http://reckner.phonelogic.windowsservice/IPhoneLogicService/RecruiterDialOut" message="tns:IPhoneLogicService_RecruiterDialOut_InputMessage" />
+      <wsdl:output wsaw:Action="http://reckner.phonelogic.windowsservice/IPhoneLogicService/RecruiterDialOutResponse" message="tns:IPhoneLogicService_RecruiterDialOut_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TransferCall">
+      <wsdl:input wsaw:Action="http://reckner.phonelogic.windowsservice/IPhoneLogicService/TransferCall" message="tns:IPhoneLogicService_TransferCall_InputMessage" />
+      <wsdl:output wsaw:Action="http://reckner.phonelogic.windowsservice/IPhoneLogicService/TransferCallResponse" message="tns:IPhoneLogicService_TransferCall_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SilentMonitorCall">
+      <wsdl:input wsaw:Action="http://reckner.phonelogic.windowsservice/IPhoneLogicService/SilentMonitorCall" message="tns:IPhoneLogicService_SilentMonitorCall_InputMessage" />
+      <wsdl:output wsaw:Action="http://reckner.phonelogic.windowsservice/IPhoneLogicService/SilentMonitorCallResponse" message="tns:IPhoneLogicService_SilentMonitorCall_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BargeIntoCall">
+      <wsdl:input wsaw:Action="http://reckner.phonelogic.windowsservice/IPhoneLogicService/BargeIntoCall" message="tns:IPhoneLogicService_BargeIntoCall_InputMessage" />
+      <wsdl:output wsaw:Action="http://reckner.phonelogic.windowsservice/IPhoneLogicService/BargeIntoCallResponse" message="tns:IPhoneLogicService_BargeIntoCall_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DispatchCallInQueue">
+      <wsdl:input wsaw:Action="http://reckner.phonelogic.windowsservice/IPhoneLogicService/DispatchCallInQueue" message="tns:IPhoneLogicService_DispatchCallInQueue_InputMessage" />
+      <wsdl:output wsaw:Action="http://reckner.phonelogic.windowsservice/IPhoneLogicService/DispatchCallInQueueResponse" message="tns:IPhoneLogicService_DispatchCallInQueue_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

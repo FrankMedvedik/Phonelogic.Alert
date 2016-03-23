@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/PhoneLogic.DataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/PhoneLogic.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfJobSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="JobSummary" nillable="true" type="tns:JobSummary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfJobSummary" nillable="true" type="tns:ArrayOfJobSummary" />
+  <xs:complexType name="JobSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Abandoned" type="xs:int" />
+      <xs:element minOccurs="0" name="Callback" type="xs:int" />
+      <xs:element minOccurs="0" name="InQueue" type="xs:int" />
+      <xs:element minOccurs="0" name="InboundCalls" type="xs:int" />
+      <xs:element minOccurs="0" name="JobNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LeftMessage" type="xs:int" />
+      <xs:element minOccurs="0" name="NoAgents" type="xs:int" />
+      <xs:element minOccurs="0" name="OutboundCall" type="xs:int" />
+      <xs:element minOccurs="0" name="PlacedCall" type="xs:int" />
+      <xs:element minOccurs="0" name="TollFreeNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JobSummary" nillable="true" type="tns:JobSummary" />
+  <xs:complexType name="ArrayOfQueueDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QueueDetail" nillable="true" type="tns:QueueDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfQueueDetail" nillable="true" type="tns:ArrayOfQueueDetail" />
+  <xs:complexType name="QueueDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CallerId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JobNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TimeIn" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueueDetail" nillable="true" type="tns:QueueDetail" />
+  <xs:complexType name="ArrayOfQueueSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QueueSummary" nillable="true" type="tns:QueueSummary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfQueueSummary" nillable="true" type="tns:ArrayOfQueueSummary" />
+  <xs:complexType name="QueueSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="InQueue" type="xs:int" />
+      <xs:element minOccurs="0" name="JobNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueueSummary" nillable="true" type="tns:QueueSummary" />
+  <xs:complexType name="ArrayOfActiveCall">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ActiveCall" nillable="true" type="tns:ActiveCall" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfActiveCall" nillable="true" type="tns:ArrayOfActiveCall" />
+  <xs:complexType name="ActiveCall">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CallerId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConferenceUri" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JobNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecruiterUri" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TimeIn" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ActiveCall" nillable="true" type="tns:ActiveCall" />
+</xs:schema>

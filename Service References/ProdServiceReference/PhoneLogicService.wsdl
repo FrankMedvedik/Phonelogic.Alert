@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://reckner.phonelogic.windowsservice" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PhoneLogicService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://reckner.phonelogic.windowsservice" location="http://cc-prod.reckner.com:1255/PhoneLogic?wsdl=wsdl0" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://cc-prod.reckner.com:1255/PhoneLogic?xsd=xsd4" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://cc-prod.reckner.com:1255/PhoneLogic?xsd=xsd0" namespace="http://reckner.phonelogic.windowsservice" />
+      <xsd:import schemaLocation="http://cc-prod.reckner.com:1255/PhoneLogic?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://cc-prod.reckner.com:1255/PhoneLogic?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PhoneLogic.DataContracts" />
+      <xsd:import schemaLocation="http://cc-prod.reckner.com:1255/PhoneLogic?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://cc-prod.reckner.com:1255/PhoneLogic?xsd=xsd5" namespace="http://schemas.microsoft.com/Message" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPolicyRetriever_GetSilverlightPolicy_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSilverlightPolicy" />
+  </wsdl:message>
+  <wsdl:message name="IPolicyRetriever_GetSilverlightPolicy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSilverlightPolicyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPolicyRetriever_GetFlashPolicy_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFlashPolicy" />
+  </wsdl:message>
+  <wsdl:message name="IPolicyRetriever_GetFlashPolicy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFlashPolicyResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IPolicyRetriever">
+    <wsdl:operation name="GetSilverlightPolicy">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPolicyRetriever/GetSilverlightPolicy" message="tns:IPolicyRetriever_GetSilverlightPolicy_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPolicyRetriever/GetSilverlightPolicyResponse" message="tns:IPolicyRetriever_GetSilverlightPolicy_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFlashPolicy">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPolicyRetriever/GetFlashPolicy" message="tns:IPolicyRetriever_GetFlashPolicy_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPolicyRetriever/GetFlashPolicyResponse" message="tns:IPolicyRetriever_GetFlashPolicy_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IPhoneLogicService" type="i0:IPhoneLogicService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetJobSummary">
+      <soap:operation soapAction="http://reckner.phonelogic.windowsservice/IPhoneLogicService/GetJobSummary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQueueDetail">
+      <soap:operation soapAction="http://reckner.phonelogic.windowsservice/IPhoneLogicService/GetQueueDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCallsInQueue">
+      <soap:operation soapAction="http://reckner.phonelogic.windowsservice/IPhoneLogicService/GetAllCallsInQueue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMyQueuedCalls">
+      <soap:operation soapAction="http://reckner.phonelogic.windowsservice/IPhoneLogicService/GetMyQueuedCalls" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMyQueueSummary">
+      <soap:operation soapAction="http://reckner.phonelogic.windowsservice/IPhoneLogicService/GetMyQueueSummary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMyQueueDetail">
+      <soap:operation soapAction="http://reckner.phonelogic.windowsservice/IPhoneLogicService/GetMyQueueDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecruitersOnline">
+      <soap:operation soapAction="http://reckner.phonelogic.windowsservice/IPhoneLogicService/GetRecruitersOnline" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecruitersAvailable">
+      <soap:operation soapAction="http://reckner.phonelogic.windowsservice/IPhoneLogicService/GetRecruitersAvailable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveCalls">
+      <soap:operation soapAction="http://reckner.phonelogic.windowsservice/IPhoneLogicService/GetActiveCalls" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForceReady">
+      <soap:operation soapAction="http://reckner.phonelogic.windowsservice/IPhoneLogicService/ForceReady" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PullFromQueue">
+      <soap:operation soapAction="http://reckner.phonelogic.windowsservice/IPhoneLogicService/PullFromQueue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecruiterDialOut">
+      <soap:operation soapAction="http://reckner.phonelogic.windowsservice/IPhoneLogicService/RecruiterDialOut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransferCall">
+      <soap:operation soapAction="http://reckner.phonelogic.windowsservice/IPhoneLogicService/TransferCall" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SilentMonitorCall">
+      <soap:operation soapAction="http://reckner.phonelogic.windowsservice/IPhoneLogicService/SilentMonitorCall" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BargeIntoCall">
+      <soap:operation soapAction="http://reckner.phonelogic.windowsservice/IPhoneLogicService/BargeIntoCall" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DispatchCallInQueue">
+      <soap:operation soapAction="http://reckner.phonelogic.windowsservice/IPhoneLogicService/DispatchCallInQueue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PhoneLogicService">
+    <wsdl:port name="BasicHttpBinding_IPhoneLogicService" binding="tns:BasicHttpBinding_IPhoneLogicService">
+      <soap:address location="http://cc-prod.reckner.com:1255/PhoneLogic" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
